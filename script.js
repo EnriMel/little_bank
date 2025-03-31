@@ -72,3 +72,14 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements);
+
+const createUserName = function (str) {
+  const userName = str
+    .toLowerCase()
+    .split(" ")
+    .map((el) => el[0])
+    .join("");
+  return userName;
+};
+
+console.log(createUserName(account1.owner));
