@@ -87,6 +87,7 @@ const calcDisplaySummary = function (movements) {
   const interest = movements
     .filter((mov) => mov > 0)
     .map((deposit) => (deposit * 1.2) / 100)
+    .filter((int) => int >= 1) // exclude interests that are below one
     .reduce((acc, int) => acc + int, 0);
 
   labelSumIn.textContent = `${incomes}€`;
